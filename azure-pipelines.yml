@@ -1,0 +1,18 @@
+trigger:
+- main
+
+pool:
+ vmImage: ubuntu-latest
+
+jobs:
+  - job: Build
+    steps:
+      - script: 'pwd'
+      - script: 'ls -l'
+      - task: Docker@2
+        inputs:
+          containerRegistry: 'ajay_acr_con'
+          repository: 'ganjiacr.azurecr.io/techtalk'
+          command: 'buildAndPush'
+          Dockerfile: '**/Dockerfile'
+          tags: $(Build.BuildId)
