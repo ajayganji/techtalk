@@ -12,7 +12,7 @@ jobs:
       - task: Docker@2
         inputs:
           containerRegistry: 'ajay_acr_con'
-          repository: 'ganjiacr.azurecr.io/techtalk'
+          repository: 'techtalk'
           command: 'buildAndPush'
           Dockerfile: '**/dockerfile'
           tags: $(Build.SourceVersion)
@@ -20,6 +20,6 @@ jobs:
         inputs:
           azureSubscription: 'Microsoft Azure(1)(67aa1a6a-7473-46e2-aec6-d27892dfa9ba)'
           appName: 'techtaks'
-          containers: 'ganjiacr.azurecr.io/techtalk:$(Build.SourceVersion)'
+          containers: 'techtalk:$(Build.SourceVersion)'
       
       
