@@ -16,3 +16,10 @@ jobs:
           command: 'buildAndPush'
           Dockerfile: '**/dockerfile'
           tags: $(Build.SourceVersion)
+      - task: AzureWebAppContainer@1
+        inputs:
+          azureSubscription: 'Microsoft Azure(1)(67aa1a6a-7473-46e2-aec6-d27892dfa9ba)'
+          appName: 'techtaks'
+          containers: 'ganjiacr.azurecr.io/techtalk:$(Build.SourceVersion)'
+      
+      
