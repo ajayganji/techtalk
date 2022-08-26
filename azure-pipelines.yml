@@ -14,5 +14,5 @@ jobs:
           containerRegistry: 'ajay_acr_con'
           repository: 'ganjiacr.azurecr.io/techtalk'
           command: 'buildAndPush'
-          Dockerfile: '**/Dockerfile'
+          Dockerfile: '**/dockerfile'
           tags: $(Build.BuildId)
